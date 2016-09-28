@@ -8,7 +8,7 @@
 </template>
 
 <style lang='scss'>
-  @import '~voyager-assets/scss/variables';
+  @import '../assets/scss/variables';
   .app-footer {
     width: 100%;
     background-color: $light;
