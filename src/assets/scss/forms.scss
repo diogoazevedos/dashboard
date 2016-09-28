@@ -1,0 +1,13 @@
+// Form input base style
+//
+
+.input {
+  border-width: 0;
+  outline-style: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  @include make-transition-all();
+  @include make-input-scales();
+  @include make-input-styles();
+}

@@ -1,0 +1,37 @@
+// Dropdowns
+//
+
+.dropdown-menu {
+  width: 240px;
+  z-index: 100;
+  background-color: $light;
+  box-shadow: 0 3px 20px rgba(89, 105, 129, .3), 0 1px 2px rgba(0, 0, 0, .05), 0 0 0 1px rgba(89, 105, 129, .1);
+}
+
+.dropdown-menu--item {
+  position: relative;
+  display: block;
+  height: 40px;
+  padding: 0 44px;
+  line-height: 40px;
+  font-size: $font-size-m;
+  color: $primary-light;
+  border-bottom: 1px solid #EEF1F6;
+  text-decoration: none;
+  transition: all ease 0.1s;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  & > i {
+    position: absolute;
+    left: 14px;
+    top: 12px;
+  }
+
+  &:hover {
+    color: $primary-dark;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+}

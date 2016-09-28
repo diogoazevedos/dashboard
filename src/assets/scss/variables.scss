@@ -1,0 +1,54 @@
+// Colors
+// Grayscale and colors palettes
+//
+
+$light: #fff;
+$gray: #2c2f33;
+$gray-light: #99aab5;
+$gray-dark: #23272A;
+
+$primary: #6d4897;
+$primary-light: #865fb3;
+$primary-dark: #543874;
+
+$blue: #1fb6ff;
+$blue-light: #85d7ff;
+$blue-dark: #009eeb;
+
+$green: #13ce66;
+$green-light: #29eb7f;
+$green-dark: #0f9f4f;
+
+$red: #ff4949;
+$red-light: #ff7c7c;
+$red-dark: #ff1616;
+
+$success: $green;
+$error: $red;
+
+// Body
+// Settings for the `<body>` element.
+//
+
+$body-bg:    $light !default;
+$body-color: $gray-dark !default;
+
+// Typography
+//
+
+$font-family-base: "Source Sans Pro", sans-serif !default;
+
+$font-size-root: 16px !default;
+$font-size-base: 1rem !default;
+
+$line-height-base: 1.5 !default;
+
+$font-size-xxxxl:  3rem !default;
+$font-size-xxxl:   2.375rem !default;
+$font-size-xxl:    1.750rem !default;
+$font-size-xl:     1.250rem !default;
+$font-size-l:      1.125rem !default;
+$font-size-m:      1rem !default;
+$font-size-s:      0.875rem !default;
+$font-size-xs:     0.750rem !default;
+$font-size-xxs:    0.625rem !default;

@@ -1,0 +1,59 @@
+// Background color classes
+//
+
+.bg-voyager {
+  @include make-bg-color($primary, $primary-light, $primary-dark);
+  @include make-bg-color-hover($primary);
+}
+
+.bg-light {
+  background-color: $light;
+  @include make-bg-color-hover($light);
+}
+
+.bg-gray {
+  @include make-bg-color($gray, $gray-light, $gray-dark);
+  @include make-bg-color-hover($gray);
+}
+
+.bg-green {
+  @include make-bg-color($green, $green-light, $green-dark);
+  @include make-bg-color-hover($green);
+}
+
+.bg-blue {
+  @include make-bg-color($blue, $blue-light, $blue-dark);
+  @include make-bg-color-hover($blue);
+}
+
+.bg-red {
+  @include make-bg-color($red, $red-light, $red-dark);
+  @include make-bg-color-hover($red);
+}
+
+// Text color classes
+//
+
+.text-voyager {
+  @include make-text-color($primary, $primary-light, $primary-dark);
+}
+
+.text-gray {
+  @include make-text-color($gray, $gray-light, $gray-dark);
+}
+
+.text-green {
+  @include make-text-color($green, $green-light, $green-dark);
+}
+
+.text-blue {
+  @include make-text-color($blue, $blue-light, $blue-dark);
+}
+
+.text-red {
+  @include make-bg-color($red, $red-light, $red-dark);
+}
+
+.text-white {
+  color: $light;
+}
