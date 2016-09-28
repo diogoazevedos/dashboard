@@ -1,5 +1,5 @@
 <script>
-import AppDropdown from './Dropdown.vue'
+import AppPopup from './Popup.vue'
 
 export default {
   data () {
@@ -17,7 +17,7 @@ export default {
   },
 
   components: {
-    AppDropdown
+    AppPopup
   }
 }
 </script>
@@ -25,19 +25,23 @@ export default {
 <template>
   <nav class="app-nav fixed-top display-flex flex-alignment--middle">
     <div class="app-nav--navigation display-flex">
-      <app-dropdown :items="navItems">
-        <a class="app-nav--menu"><span class="bars-icon"></span></a>
-      </app-dropdown>
+      <a class="app-nav--menu" ref="appNavMenu"><span class="bars-icon"></span></a>
+      <app-popup trigger="appNavMenu">
+        <a v-for="item in navItems" :href="item.href" class="dropdown-menu--item">
+          <i v-if="item.icon" :class="item.icon"></i>
+          {{item.label}}
+        </a>
+      </app-popup>
     </div>
     <div class="app-nav--brand display-flex">
-      <span class="wordmark font-size-l font-weight-600">Voyager</span>
+      <span class="font-size-l font-weight-600">Voyager</span>
     </div>
-    <div class="app-nav--user display-flex">
-      <app-dropdown :items="navUser" :position="'right'">
-        <div class="avatar avatar-xs bg-voyager--dark">
-          <div class="avatar-initials">DS</div>
-        </div>
-        <a slot="custom-item" href="/" class="dropdown-menu--item dropdown-menu--item__acount">
+    <div class="app-nav--user display-flex" ref="appUserMenu">
+      <div class="avatar avatar-xs bg-voyager--dark">
+        <div class="avatar-initials">DS</div>
+      </div>
+      <app-popup trigger="appUserMenu" position="bottom right">
+        <a href="/" class="dropdown-menu--item dropdown-menu--item__acount">
           <div class="text-center padding-top-m padding-bottom-m">
             <div class="avatar avatar-s bg-voyager margin-auto">
               <div class="avatar-initials">DS</div>
@@ -45,20 +49,26 @@ export default {
             <div class="account-name font-size-s text-align-center">Donald Silveira</div>
           </div>
         </a>
-      </app-dropdown>
+        <a v-for="item in navUser" :href="item.href" class="dropdown-menu--item">
+          <i v-if="item.icon" :class="item.icon"></i>
+          {{item.label}}
+        </a>
+      </app-popup>
     </div>
   </nav>
 </template>
 
-<style lang='scss'>
-  @import '~voyager-assets/scss/variables';
+<style lang='scss' scoped>
+  @import '../assets/scss/variables';
 
   .app-nav {
     width: 100%;
     height: 50px;
     padding: 0 15px;
-    background-color: $primary-light;
     box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+    background-color: $primary-light;
+    background: -webkit-linear-gradient(left, $primary 0%, $primary-light 100%);
+    background: linear-gradient(to right, $primary, $primary-light);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -96,16 +106,11 @@ export default {
     flex: 1;
     -ms-flex: 1;
     -webkit-box-flex: 1;
-
-    .wordmark {
-      height: 50px;
-      line-height: 50px;
-      color: $light;
-    }
+    color: $light;
   }
 
-  .dropdown-menu {
-    top: 60px;
+  .drop-open .dropdown-menu {
+    margin-top: 20px;
   }
 
   .dropdown-menu--item__acount {
