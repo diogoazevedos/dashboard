@@ -15,7 +15,3 @@ export default {
     <app-footer></app-footer>
   </div>
 </template>
-
-<style lang='scss'>
-  body { padding-top: 50px; }
-</style>
