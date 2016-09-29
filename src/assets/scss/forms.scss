@@ -2,6 +2,7 @@
 //
 
 .input {
+  width: 100%;
   border-width: 0;
   outline-style: none;
   -webkit-appearance: none;
@@ -10,4 +11,43 @@
   @include make-transition-all();
   @include make-input-scales();
   @include make-input-styles();
+}
+
+// Input group
+//
+
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+// Input icon
+//
+
+.input-icon {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+
+  & > .input {
+    padding-left: 39px;
+  }
+
+  i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $gray-light;
+    @include make-transition-all();
+  }
+}
+
+// Form label
+//
+
+form label {
+  color: $primary-dark;
+  display: inline-block;
+  margin-bottom: 5px;
 }
