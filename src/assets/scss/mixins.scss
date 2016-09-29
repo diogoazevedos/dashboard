@@ -38,6 +38,9 @@
 //
 
 @mixin make-button-scales() {
+  &--block {
+    width: 100%;
+  }
   &-s {
     min-width: 30px;
     padding: 0 15px;
@@ -68,15 +71,15 @@
 //
 
 @mixin make-button-styles {
-  &-flat {
+  &--flat {
     color: $light;
   }
-  &-inverted {
+  &--inverted {
     background-color: transparent;
     color: $gray-dark;
     box-shadow: inset 0 0 0 1px $gray-light;
   }
-  &-flat:hover, &-inverted:hover {
+  &--flat:hover, &--inverted:hover {
     box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
   }
 }
@@ -86,30 +89,50 @@
 
 @mixin make-input-scales {
   font-size: $font-size-m;
-  color: $gray-dark;
+  color: lighten($gray, 10%);
   &-s {
     font-size: $font-size-xs;
     padding: 0 10px;
     border-radius: 3px;
     height: 30px;
+
+    & + i[class^='icon-'] {
+      font-size: $font-size-s;
+      margin: 8px 0 0 10px;
+    }
   }
   &-m {
     font-size: $font-size-m;
     padding: 0 14px;
     border-radius: 4px;
     height: 40px;
+
+    & + i[class^='icon-'] {
+      font-size: $font-size-l;
+      margin: 11px 0 0 10px;
+    }
   }
   &-l {
     font-size: $font-size-l;
     padding: 0 16px;
     border-radius: 4px;
     height: 50px;
+
+    & + i[class^='icon-'] {
+      font-size: $font-size-xl;
+      margin: 14px 0 0 10px;
+    }
   }
   &-xl {
     font-size: $font-size-xl;
     padding: 0 20px;
     border-radius: 4px;
     height: 60px;
+
+    & + i[class^='icon-'] {
+      font-size: $font-size-xxl;
+      margin: 17px 0 0 10px;
+    }
   }
 }
 
@@ -122,25 +145,43 @@
     &:focus {
       box-shadow: inset 0 0 0 1px $primary;
     }
+    &:focus + i[class^='icon-'] {
+      color: $primary;
+    }
   }
   &--blue {
     &:focus {
       box-shadow: inset 0 0 0 1px $blue;
+    }
+    &:focus + i[class^='icon-'] {
+      color: $blue;
     }
   }
   &--success {
     &:focus {
       box-shadow: inset 0 0 0 1px $green;
     }
+    &:focus + i[class^='icon-'] {
+      color: $green;
+    }
+    &:focus + i[class^='icon-'] {
+      color: $green;
+    }
   }
   &--error {
     &:focus {
       box-shadow: inset 0 0 0 1px $red;
     }
+    &:focus + i[class^='icon-'] {
+      color: $red;
+    }
   }
   &--dark {
     &:focus {
       box-shadow: inset 0 0 0 1px $gray-dark;
+    }
+    &:focus + i[class^='icon-'] {
+      color: $gray-dark;
     }
   }
 }
@@ -150,23 +191,4 @@
 
 @mixin make-transition-all($speed: 170ms, $type: linear) {
   transition: all $speed $type;
-}
-
-// Make shadow
-// Copyright github.com/paulmelnikow
-// Gist: https://gist.github.com/paulmelnikow/7fcfbe4f68e5df7fe326
-//
-
-@mixin make-shadow($level) {
-  @if $level == 1 {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  } @else if $level == 2 {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  } @else if $level == 3 {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  } @else if $level == 4 {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  } @else if $level == 5 {
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  }
 }
