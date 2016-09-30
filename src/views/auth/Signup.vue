@@ -1,4 +1,40 @@
 <script>
+import Vue from 'vue'
+import { Validator } from 'vee-validate'
+
+export default {
+  data () {
+    return {
+      fullName: '',
+      email: '',
+      company: '',
+      password: '',
+      validator: null,
+      errors: []
+    }
+  },
+
+  methods: {
+    validateForm () {
+      this.validator.validateAll({
+        fullName: this.fullName,
+        email: this.email,
+        company: this.company,
+        password: this.password
+      })
+    }
+  },
+
+  mounted () {
+    this.validator = new Validator({
+      fullName: 'required',
+      email: 'required|email',
+      company: 'required',
+      password: 'required|min:6'
+    })
+    Vue.set(this, 'errors', this.validator.errorBag)
+  }
+}
 </script>
 
 <template>
@@ -23,38 +59,41 @@
           <div class="row flex-alignment--start">
             <div class="col-sm-6">
               <form class="padding-m" novalidate>
+                <div v-if="errors.errors !== undefined && errors.errors.length" class="form-errors padding-s border-radius-s shadow-level--1 bg-red text-align-left">
+                  <span v-for="error in errors.errors" class="text-white font-size-s">{{error.msg}}</span>
+                </div>
                 <div class="input-group">
                   <label for="">Full name</label>
                   <div class="input-icon">
-                    <input type="text" class="input input-m input--primary" placeholder="Full name">
+                    <input type="text" name="fullName" class="input input-m input--primary" placeholder="Full name" v-model="fullName">
                     <i class="icon-user"></i>
                   </div>
                 </div>
                 <div class="input-group">
                   <label for="">Email Address</label>
                   <div class="input-icon">
-                    <input type="email" class="input input-m input--primary" placeholder="email@domain.com">
+                    <input type="email" name="email" class="input input-m input--primary" placeholder="Email Address" v-model="email">
                     <i class="icon-envelope"></i>
                   </div>
                 </div>
                 <div class="input-group">
                   <label for="">Company name</label>
                   <div class="input-icon">
-                    <input type="text" class="input input-m input--primary" placeholder="Company name">
+                    <input type="text" name="company" class="input input-m input--primary" placeholder="Company name" v-model="company">
                     <i class="icon-briefcase"></i>
                   </div>
                 </div>
                 <div class="input-group">
                   <label for="">Password</label>
                   <div class="input-icon">
-                    <input type="password" class="input input-m input--primary" placeholder="Password">
+                    <input type="password" name="password" class="input input-m input--primary" placeholder="Password" v-model="password">
                     <i class="icon-lock"></i>
                   </div>
                 </div>
                 <p class="font-size-s">
                   By clicking on "Create an account" below, you are agreeing to the <a href="#">Terms of Service</a> and our <a href="#">Privacy Policy</a>.
                 </p>
-                <button class="button button-l button--block button--flat bg-voyager">Create an account</button>
+                <button class="button button-l button--block button--flat bg-voyager" @click.prevent="validateForm">Create an account</button>
               </form>
             </div>
             <div class="col-sm-6">
@@ -71,7 +110,7 @@
             </div>
           </div>
           <div class="panel-footer border-radius-bottom-s padding-m text-align-center reset-margin-row">
-            Already have an account? <router-link to="/signin" class="text-voyager--dark">Login</router-link>
+            Already have an account? <router-link to="/signin" class="text-voyager--dark">Sign in</router-link>
           </div>
         </div>
       </div>
