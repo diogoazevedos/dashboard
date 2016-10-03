@@ -1,15 +1,10 @@
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
-import VueMoment from 'vue-moment'
-
-const moment = require('moment')
-require('moment/locale/pt-br')
 
 Vue.use(VeeValidate, {
   dictionary: attributes
-})
-Vue.use(VueMoment, {
-  moment
 })
 
 import App from './App.vue'
@@ -20,7 +15,8 @@ import attributes from './validator/attributes'
 
 sync(store, router)
 
-const app = new Vue({
+/* eslint-disable no-new */
+new Vue({
   router,
   store,
   el: '#app',
