@@ -11,6 +11,10 @@
   @include make-bg-color-hover($light);
 }
 
+.bg-white-smoke {
+  background-color: $smoke;
+}
+
 .bg-gray {
   @include make-bg-color($gray, $gray-light, $gray-dark);
   @include make-bg-color-hover($gray);
