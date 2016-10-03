@@ -7,6 +7,8 @@ import Main from '../Main.vue'
 import Dashboard from '../views/dashboard/Index.vue'
 import Signin from '../views/auth/Signin.vue'
 import Signup from '../views/auth/Signup.vue'
+import SignupAccount from '../views/auth/signup/Account.vue'
+import SignupPayment from '../views/auth/signup/Payment.vue'
 
 const router = new VueRouter({
   mode: 'history',
@@ -21,8 +23,20 @@ const router = new VueRouter({
         }
       ]
     },
-    { path: '/signin', component: Signin },
-    { path: '/signup', component: Signup },
+    { path: '/login', component: Signin },
+    { path: '/join',
+      component: Signup,
+      children: [
+        {
+          path: '',
+          component: SignupAccount
+        },
+        {
+          path: 'payment',
+          component: SignupPayment
+        }
+      ]
+    },
     { path: '*', redirect: '/' }
   ]
 })
