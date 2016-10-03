@@ -1,9 +1,25 @@
 <script>
+import { mapActions } from 'vuex'
+
 export default {
+  name: 'AppDashboard',
+
   data () {
     return {
       msg: 'Hello Vue 2.0!'
     }
+  },
+
+  methods: {
+    ...mapActions(['changePageInfos'])
+  },
+
+  mounted () {
+    const payload = {
+      title: 'Dashboard',
+      icon: 'icon-grid'
+    }
+    this.changePageInfos(payload)
   }
 }
 </script>
