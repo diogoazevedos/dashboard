@@ -1,5 +1,5 @@
 <script>
-import AppPopup from './Popup.vue'
+import AppPopup from './ui/Popup.vue'
 
 export default {
   data () {
@@ -95,10 +95,10 @@ export default {
       display: block;
       width: 32px;
       height: 30px;
-      background: url('data:image/svg+xml;utf8,<svg version="1.1" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" fill="#fff"><g><path d="M940.9,230.4H59.1c-27.1,0-49.1-22-49.1-49.1c0-27.1,22-49.1,49.1-49.1h881.8c27.1,0,49.1,22,49.1,49.1C990,208.4,968,230.4,940.9,230.4z"/><path d="M940.9,549.1H59.1C32,549.1,10,527.1,10,500c0-27.1,22-49.1,49.1-49.1h881.8c27.1,0,49.1,22,49.1,49.1C990,527.1,968,549.1,940.9,549.1z"/><path d="M940.9,867.8H59.1c-27.1,0-49.1-22-49.1-49.1c0-27.1,22-49.1,49.1-49.1h881.8c27.1,0,49.1,22,49.1,49.1C990,845.8,968,867.8,940.9,867.8z"/></g></svg>');
+      background: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" width="20" height="20" viewBox="0 0 20 20"><path d="M17.5 6h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path d="M17.5 11h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path><path d="M17.5 16h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path></svg>');
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 25px 25px;
+      background-size: 32px 32px;
     }
   }
 
@@ -110,7 +110,7 @@ export default {
   }
 
   .drop-open .dropdown-menu {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .dropdown-menu--item__acount {
