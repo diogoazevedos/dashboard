@@ -44,11 +44,6 @@
   margin-right: auto;
 }
 
-.reset-margin-row {
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
-}
-
 .padding-xxs { padding: 5px; }
 .padding-xs { padding: 10px; }
 .padding-s { padding: 15px; }
@@ -59,20 +54,62 @@
 // Individual spacing
 //
 
-.margin-top-m { margin-top: 20px; }
-.margin-right-m { margin-right: 20px; }
-.margin-bottom-m { margin-bottom: 20px; }
-.margin-left-m { margin-left: 20px; }
+// Margin
+.margin-top {
+  &-reset { margin-top: 0px; }
+  &-xs { margin-top: 10px; }
+  &-s { margin-top: 15px; }
+  &-m { margin-top: 20px; }
+  &-l { margin-top: 40px; }
+}
+.margin-right {
+  &-reset { margin-right: 0px; }
+  &-xs { margin-right: 10px; }
+  &-s { margin-right: 15px; }
+  &-m { margin-right: 20px; }
+  &-l { margin-right: 40px; }
+}
+.margin-bottom {
+  &-reset { margin-bottom: 0px; }
+  &-xs { margin-bottom: 10px; }
+  &-s { margin-bottom: 15px; }
+  &-m { margin-bottom: 20px; }
+  &-l { margin-bottom: 40px; }
+}
+.margin-left {
+  &-reset { margin-left: 0px; }
+  &-xs { margin-left: 10px; }
+  &-s { margin-left: 15px; }
+  &-m { margin-left: 20px; }
+  &-l { margin-left: 40px; }
+}
 
-.padding-top-m { padding-top: 20px; }
-.padding-right-m { padding-right: 20px; }
-.padding-bottom-m { padding-bottom: 20px; }
-.padding-left-m { padding-left: 20px; }
+// Padding
 
-.padding-top-l { padding-top: 40px; }
-.padding-right-l { padding-right: 40px; }
-.padding-bottom-l { padding-bottom: 40px; }
-.padding-left-l { padding-left: 40px; }
+.padding-top {
+  &-xs { padding-top: 10px; }
+  &-s { padding-top: 15px; }
+  &-m { padding-top: 20px; }
+  &-l { padding-top: 40px; }
+}
+.padding-right {
+  &-xs { padding-right: 10px; }
+  &-s { padding-right: 15px; }
+  &-m { padding-right: 20px; }
+  &-l { padding-right: 40px; }
+}
+.padding-bottom {
+  &-xs { padding-bottom: 10px; }
+  &-s { padding-bottom: 15px; }
+  &-m { padding-bottom: 20px; }
+  &-l { padding-bottom: 40px; }
+}
+.padding-left {
+  &-xs { padding-left: 10px; }
+  &-s { padding-left: 15px; }
+  &-m { padding-left: 20px; }
+  &-l { padding-left: 40px; }
+}
 
 // Border radius
 //
