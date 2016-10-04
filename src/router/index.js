@@ -12,13 +12,15 @@ import SignupPayment from '../views/auth/signup/Payment.vue'
 
 const router = new VueRouter({
   mode: 'history',
+  base: '/',
   routes: [
     {
       path: '/',
+      redirect: '/dashboard',
       component: Main,
       children: [
         {
-          path: '/dashboard',
+          path: 'dashboard',
           component: Dashboard
         }
       ]
@@ -37,7 +39,7 @@ const router = new VueRouter({
         }
       ]
     },
-    { path: '*', redirect: '/dashboard' }
+    { path: '*', redirect: '/' }
   ]
 })
 
