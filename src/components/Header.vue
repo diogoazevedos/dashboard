@@ -1,25 +1,31 @@
 <script>
-import { mapState } from 'vuex'
-
 export default {
-  computed: {
-    ...mapState({
-      pageTitle: state => state.page.title,
-      pageIcon: state => state.page.icon
-    })
+  props: {
+    title: {
+      type: String,
+      default: 'Not Found'
+    },
+    icon: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>
 
 <template>
-  <header class="title-header bg-white-smoke display-flex">
+  <header class="title-header bg-snow display-flex">
     <div class="container">
       <div class="row middle-xs">
         <div class="col-xs-6 col-sm-6">
-          <h2 class="font-weight-400">
-            <i class="font-size-l" :class="pageIcon"></i>
-            <span class="font-size-m">{{pageTitle}}</span>
+          <h2 class="font-weight-300">
+            <i class="font-size-l" :class="icon"></i>
+            <span class="font-size-m" v-text="title"></span>
           </h2>
+          <slot name="left"></slot>
+        </div>
+        <div class="col-xs-6 col-sm-6 flex-alignment--end">
+          <slot name="right"></slot>
         </div>
       </div>
     </div>
@@ -30,9 +36,9 @@ export default {
 @import '../assets/scss/variables';
 
 header {
-  margin-top: 53px;
+  margin-bottom: 25px;
   height: 60px;
-  border-bottom: 1px solid darken($smoke, 10%);
+  border-bottom: 1px solid $snow-dark;
 
   h2 {
     position: relative;

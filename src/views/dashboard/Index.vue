@@ -1,38 +1,20 @@
 <script>
-import { mapActions } from 'vuex'
+import AppHeader from '../../components/Header.vue'
 
 export default {
   name: 'AppDashboard',
 
-  data () {
-    return {
-      msg: 'Hello Vue 2.0!'
-    }
-  },
-
-  methods: {
-    ...mapActions(['changePageInfos'])
-  },
-
-  mounted () {
-    const payload = {
-      title: 'Dashboard',
-      icon: 'icon-grid'
-    }
-    this.changePageInfos(payload)
+  components: {
+    AppHeader
   }
 }
 </script>
 
 <template>
-  <section class="hero is-light is-fullheight">
-    <div class="hero-body has-text-centered">
-      <div class="container">
-        <img src="../../assets/logo.png">
-        <h1>{{ msg }}</h1>
-      </div>
-    </div>
-  </section>
+  <div>
+    <app-header title="Dashboard" icon="icon-grid"></app-header>
+    <div class="container"></div>
+  </div>
 </template>
 
 <style lang="scss">

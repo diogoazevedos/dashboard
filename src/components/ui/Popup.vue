@@ -21,7 +21,7 @@ export default {
 
   mounted () {
     this.popup = new Popup({
-      target: this.$parent.$refs[this.trigger],
+      target: this.$parent.$refs[this.trigger][0] || this.$parent.$refs[this.trigger],
       content: this.$refs.popup,
       position: this.position,
       openOn: 'click'

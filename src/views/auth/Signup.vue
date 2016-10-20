@@ -9,9 +9,9 @@ export default {
 </script>
 
 <template>
-  <div class="page-wrap display-flex">
+  <div class="page-wrap display-flex flex-alignment--middle">
     <div class="container">
-      <h1 class="text-align-center text-white font-weight-300">Voyager</h1>
+      <h1 class="text-align-center text-white font-weight-300 margin-bottom-l">Voyager</h1>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
           <div class="panel border-radius-s shadow-level--1 bg-light">

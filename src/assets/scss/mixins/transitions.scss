@@ -1,0 +1,6 @@
+// Make transition all properties
+//
+
+@mixin make-transition-all($speed: 170ms, $type: linear) {
+  transition: all $speed $type;
+}

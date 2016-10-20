@@ -11,8 +11,9 @@
   @include make-bg-color-hover($light);
 }
 
-.bg-white-smoke {
-  background-color: $smoke;
+.bg-snow {
+  @include make-bg-color($snow, $snow-light, $snow-dark);
+  @include make-bg-color-hover($snow);
 }
 
 .bg-gray {

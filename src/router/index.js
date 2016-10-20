@@ -5,6 +5,9 @@ Vue.use(VueRouter)
 
 import Main from '../Main.vue'
 import Dashboard from '../views/dashboard/Index.vue'
+import Products from '../views/products/Index.vue'
+import Settings from '../views/settings/Index.vue'
+import Profile from '../views/settings/Profile.vue'
 import Signin from '../views/auth/Signin.vue'
 import Signup from '../views/auth/Signup.vue'
 import SignupAccount from '../views/auth/signup/Account.vue'
@@ -19,9 +22,15 @@ const router = new VueRouter({
       redirect: '/dashboard',
       component: Main,
       children: [
+        { path: 'dashboard', component: Dashboard },
+        { path: 'products', component: Products },
         {
-          path: 'dashboard',
-          component: Dashboard
+          path: '/settings',
+          redirect: '/settings/profile',
+          component: Settings,
+          children: [
+            { path: 'profile', component: Profile }
+          ]
         }
       ]
     },
@@ -29,14 +38,8 @@ const router = new VueRouter({
     { path: '/join',
       component: Signup,
       children: [
-        {
-          path: '',
-          component: SignupAccount
-        },
-        {
-          path: 'payment',
-          component: SignupPayment
-        }
+        { path: '', component: SignupAccount },
+        { path: 'payment', component: SignupPayment }
       ]
     },
     { path: '*', redirect: '/' }

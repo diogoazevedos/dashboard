@@ -48,6 +48,10 @@ html {
 // Reset HTML, body, and more
 //
 
+html, body {
+  height: 100%;
+}
+
 html {
   // Sets a specific default `font-size` for user with `rem` type scales.
   font-size: $font-size-root;
@@ -71,6 +75,8 @@ body {
   color: $body-color;
   // By default, `<body>` has no `background-color` so we set one as a best practice.
   background-color: $body-bg;
+  // Remove horizontal scroll
+  overflow-x: hidden;
 }
 
 // Suppress the focus outline on elements that cannot be accessed via keyboard.
@@ -233,4 +239,15 @@ input[type="search"] {
 // Always hide an element with the `hidden` HTML attribute (from PureCSS).
 [hidden] {
   display: none !important;
+}
+
+// Links
+//
+
+a {
+  color: $blue-dark;
+}
+
+a:active {
+  color: $primary-light;
 }

@@ -1,4 +1,15 @@
-// Form input base style
+// Nested form elements
+//
+
+form {
+  label {
+    color: $primary-dark;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
+
+// Form input
 //
 
 .input {
@@ -43,16 +54,68 @@
   }
 }
 
-// Form label
+// Input checkbox
 //
 
-form label {
-  color: $primary-dark;
+.input-checkbox {
+  position: relative;
   display: inline-block;
-  margin-bottom: 5px;
+  @include make-checkbox-scales();
+
+  input {
+    position: absolute;
+    opacity: 0;
+    padding: 0;
+    z-index: -1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  input:checked {
+    &~.input-checkbox--indicator {
+      box-shadow: inset 0 0 0 15px $primary;
+      .input-checkbox--icon {
+        opacity: 100;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.input-checkbox--indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  background-color: $light;
+  box-shadow: inset 0 0 0 2px $gray-light;
+  transition-duration: .5s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.input-checkbox--icon {
+  fill: $light;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-delay: .3s;
+  transition-delay: .3s;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0,.89,.44,1);
+  transition-timing-function: cubic-bezier(0,.89,.44,1);
+  -webkit-transform: scale(0);
+  transform: scale(0);
 }
 
 // Form errors
+//
+
 .form-errors {
     width: 100%;
     margin-bottom: 20px;

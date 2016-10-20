@@ -12,3 +12,9 @@
   @include make-button-scales();
   @include make-button-styles();
 }
+
+[role="button"] {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}

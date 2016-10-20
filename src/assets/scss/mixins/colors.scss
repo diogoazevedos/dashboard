@@ -1,0 +1,35 @@
+// Make background color class
+//
+
+@mixin make-bg-color($p, $l, $d) {
+  background-color: $p;
+  &--light {
+    background-color: $l;
+  }
+  &--dark {
+    background-color: $d;
+  }
+}
+
+// Make background color hover class
+//
+
+@mixin make-bg-color-hover($p) {
+  &--hover:hover {
+    background-color: $p;
+    color: $light;
+  }
+}
+
+// Make text color class
+//
+
+@mixin make-text-color($p, $l, $d) {
+  color: $p;
+  &--light {
+    color: $l;
+  }
+  &--dark {
+    color: $d;
+  }
+}

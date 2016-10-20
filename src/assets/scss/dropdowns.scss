@@ -2,10 +2,10 @@
 //
 
 .dropdown-menu {
-  width: 240px;
-  z-index: 100;
+  position: relative;
   background-color: $light;
   box-shadow: 0 3px 20px rgba(89, 105, 129, .3), 0 1px 2px rgba(0, 0, 0, .05), 0 0 0 1px rgba(89, 105, 129, .1);
+  z-index: 100;
 }
 
 .dropdown-menu--item {
@@ -18,7 +18,7 @@
   color: $primary-light;
   border-bottom: 1px solid #EEF1F6;
   text-decoration: none;
-  transition: all ease 0.1s;
+  transition: all .2s linear;
 
   &:last-child {
     border-bottom: 0;
@@ -34,4 +34,67 @@
     color: $primary-dark;
     background-color: rgba(0, 0, 0, 0.02);
   }
+}
+
+// Dropdown listing actions
+//
+
+.dropdown-menu--action {
+  min-width: 170px;
+  margin-top: 0px !important;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transition: all .2s linear;
+  }
+
+  &:before {
+    top: -7px;
+    margin-left: -7px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #FFF;
+    z-index: 2;
+  }
+
+  &:after {
+    top: -9px;
+    margin-left: -9px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid #e9e9e9;
+  }
+
+  & > .item {
+    position: relative;
+    display: block;
+    font-size: $font-size-s;
+    color: $gray-light;
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .2s linear;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  & > .item--destroy {
+    color: $red-light;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-top: 1px solid #EEF1F6;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.drop-open .dropdown-menu--action {
+  min-width: 170px;
+  margin-top: 12px !important;
 }
