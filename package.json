@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
+    "axios": "^0.15.2",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.0.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.1",
@@ -59,6 +60,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.7.0",
+    "lodash": "^4.16.4",
     "lolex": "^1.4.0",
     "mocha": "^3.1.0",
     "moment": "^2.15.1",
