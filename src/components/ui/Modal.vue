@@ -1,5 +1,7 @@
 <script>
 export default {
+  name: 'AppModalComponent',
+
   replace: true,
 
   props: {
@@ -14,8 +16,6 @@ export default {
   methods: {
     show () {
       this.$el.style.display = 'block'
-
-
     }
   }
 }

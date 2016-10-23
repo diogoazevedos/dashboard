@@ -1,5 +1,7 @@
 <script>
 export default {
+  name: 'AppCheckboxComponent',
+
   props: {
     value: [Number, String, Array],
     label: {

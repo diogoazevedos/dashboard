@@ -1,7 +1,9 @@
 <script>
-import AppCheckbox from '../../components/ui/Checkbox.vue'
+import AppCheckbox from './Checkbox.vue'
 
 export default {
+  name: 'AppCheckListComponent',
+
   props: {
     options: {
       type: Array,
@@ -31,7 +33,7 @@ export default {
   </section>
 </template>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .checklist-item {
   display: block;
 }

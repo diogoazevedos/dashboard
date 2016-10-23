@@ -2,6 +2,8 @@
 import Popup from 'tether-drop'
 
 export default {
+  name: 'AppPopupComponent',
+
   props: {
     trigger: {
       type: String,

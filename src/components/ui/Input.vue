@@ -2,6 +2,8 @@
 import Cleave from 'cleave.js'
 
 export default {
+  name: 'AppInputComponent',
+
   props: {
     type: {
       type: String,
@@ -43,6 +45,3 @@ export default {
 <template>
   <input :type="type" :value="value" @input="onInput">
 </template>
-
-<style lang='scss'>
-</style>
