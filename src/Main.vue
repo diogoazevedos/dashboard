@@ -1,6 +1,7 @@
 <script>
 import AppNav from './components/Nav.vue'
 import AppFooter from './components/Footer.vue'
+
 export default {
   name: 'MainComponent',
   components: {
@@ -11,8 +12,9 @@ export default {
 
 <template>
   <div style="padding-top: 50px">
-    <app-nav></app-nav>
+    <AppNav></AppNav>
     <router-view></router-view>
-    <app-footer></app-footer>
+    <AppFooter></AppFooter>
   </div>
 </template>
+
