@@ -248,6 +248,14 @@ a {
   color: $blue-dark;
 }
 
-a:active {
-  color: $primary-light;
+// Overriding the default text selection color
+//
+
+::selection {
+  color: $light;
+  background: $primary-light;
+}
+::-moz-selection {
+  color: $light;
+  background: $primary-light;
 }

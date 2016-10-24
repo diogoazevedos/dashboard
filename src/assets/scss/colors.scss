@@ -36,6 +36,44 @@
   @include make-bg-color-hover($red);
 }
 
+// Background color classes
+//
+
+.bg-voyager--hover:hover {
+  @include make-bg-color($primary, $primary-light, $primary-dark);
+  @include make-bg-color-hover($primary);
+}
+
+.bg-light--hover:hover {
+  background-color: $light;
+  @include make-bg-color-hover($light);
+}
+
+.bg-snow--hover:hover {
+  @include make-bg-color($snow, $snow-light, $snow-dark);
+  @include make-bg-color-hover($snow);
+}
+
+.bg-gray--hover:hover {
+  @include make-bg-color($gray, $gray-light, $gray-dark);
+  @include make-bg-color-hover($gray);
+}
+
+.bg-green--hover:hover {
+  @include make-bg-color($green, $green-light, $green-dark);
+  @include make-bg-color-hover($green);
+}
+
+.bg-blue--hover:hover {
+  @include make-bg-color($blue, $blue-light, $blue-dark);
+  @include make-bg-color-hover($blue);
+}
+
+.bg-red--hover:hover {
+  @include make-bg-color($red, $red-light, $red-dark);
+  @include make-bg-color-hover($red);
+}
+
 // Text color classes
 //
 
