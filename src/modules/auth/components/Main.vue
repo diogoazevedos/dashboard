@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 @import 'src/assets/scss/variables';
 
 .page-wrap {
@@ -23,7 +23,7 @@
 }
 
 .panel-footer {
-  background-color: lighten($gray-light, 30%);
-  border-top: 1px solid $gray-light;
+  background-color: $snow;
+  border-top: 1px solid $snow-dark;
 }
 </style>

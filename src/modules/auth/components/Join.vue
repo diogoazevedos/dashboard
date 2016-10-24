@@ -38,9 +38,7 @@ export default {
                 </div>
               </div>
             </div>
-            <!-- Router view -->
             <router-view></router-view>
-            <!-- ./Router view -->
             <div class="panel-footer border-radius-bottom-s padding-m text-align-center">
               Already have an account? <router-link to="/login" class="text-voyager--dark">Sign in</router-link>
             </div>
@@ -51,17 +49,3 @@ export default {
   </div>
 </template>
 
-<style lang='scss' scoped>
-@import 'src/assets/scss/variables';
-
-.page-wrap {
-  min-height: 100vh;
-  background: -webkit-linear-gradient(left, $primary 0%, $primary-light 100%);
-  background: linear-gradient(to right, $primary, $primary-light);
-}
-
-.panel-footer {
-  background-color: lighten($gray-light, 30%);
-  border-top: 1px solid $gray-light;
-}
-</style>
