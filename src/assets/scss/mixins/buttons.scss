@@ -2,9 +2,6 @@
 //
 
 @mixin make-button-scales() {
-  &-block {
-    width: 100%;
-  }
   &-s {
     min-width: 30px;
     padding: 0 15px;
@@ -45,5 +42,9 @@
   }
   &--flat:hover, &--inverted:hover {
     box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  }
+  &--block {
+    width: 100%;
+    display: block;
   }
 }
