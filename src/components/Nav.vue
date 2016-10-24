@@ -61,7 +61,7 @@ export default {
 </template>
 
 <style lang='scss' scoped>
-@import '../assets/scss/variables';
+@import 'src/assets/scss/variables';
 
 .app-nav {
   width: 100%;

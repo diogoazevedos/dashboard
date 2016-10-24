@@ -33,7 +33,7 @@ export default {
 </template>
 
 <style lang='scss' scoped>
-@import '../assets/scss/variables';
+@import 'src/assets/scss/variables';
 
 header {
   margin-bottom: 25px;
