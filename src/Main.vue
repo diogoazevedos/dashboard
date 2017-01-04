@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <div style="padding-top: 50px">
+  <div style="padding-top: 50px 0 55px 0">
     <AppNav></AppNav>
     <router-view></router-view>
     <AppFooter></AppFooter>
